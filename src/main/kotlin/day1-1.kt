@@ -28,9 +28,8 @@ fun readFile(fileName: String): List<Int> = File(fileName).readLines().map { it.
 
 fun findResult(candidate: Int, intList: List<Int>): Boolean {
     val secondCandidate = 2020 - candidate
-    if (intList.contains(secondCandidate)) {
+    return if (intList.contains(secondCandidate)) {
         println("Found result $candidate * $secondCandidate = ".plus(candidate * secondCandidate))
-        return true
-    }
-    return false
+        true
+    } else false
 }
