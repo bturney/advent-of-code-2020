@@ -5,6 +5,8 @@ fun main() {
     Day03(skiSlope).apply {
         val part1Answer = solvePart1()
         println("Part One's answer is $part1Answer")
+        val part2Answer = solvePart2()
+        println("Part Two's answer is $part2Answer")
     }
 }
 
@@ -37,6 +39,10 @@ internal class Day03(private val skiSlope: List<String>) {
         getPath(slope).count { it in skiSlope }
 
     fun solvePart1(): Int = countTreesOnSlope(3 to 1)
+
+    fun solvePart2() = listOf(1 to 1, 3 to 1, 5 to 1, 7 to 1, 1 to 2)
+        .map { countTreesOnSlope(it).toLong() }
+        .reduce { a, b -> a * b }
 }
 
 
