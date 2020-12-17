@@ -1,9 +1,9 @@
 package day02
 
-import java.io.File
+import Files
 
 fun main() {
-    val fileContents = Day02.readFile("src/main/resources/day02.csv")
+    val fileContents = Files.readFileAsList("src/main/resources/day02.csv")
     val data = Day02.parseData(fileContents)
 
     val part1Count = data.count { it.validPart1 }
@@ -13,10 +13,7 @@ fun main() {
     println("Part Two's answer is $part2Count")
 }
 
-object Day02 {
-    // TODO Refactor file reading into utility class. I have feeling I'm gonna need it...
-    fun readFile(fileName: String): List<String> = File(fileName).readLines()
-
+internal object Day02 {
     fun parseData(input: List<String>): List<PasswordRecord> = input.map { PasswordRecord.of(it) }
 
 }

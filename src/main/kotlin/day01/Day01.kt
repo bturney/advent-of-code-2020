@@ -20,7 +20,7 @@ In this list, the two entries that sum to 2020 are 1721 and 299. Multiplying the
 const val TARGET = 2020
 
 fun main() {
-    val intList = Day01.readFile("src/main/resources/day01.csv")
+    val intList = Files.readFileAsListOfInt("src/main/resources/day01.csv")
 
     val partOne = Day01.solvePart1(intList)
     println("Part One's answer is $partOne")
@@ -29,9 +29,7 @@ fun main() {
     println("Part Two's answer is $partTwo")
 }
 
-object Day01 {
-    fun readFile(fileName: String): List<Int> = File(fileName).readLines().map { it.toInt() }
-
+internal object Day01 {
     /**
      * Sort the input array
      * Loop through every element in the list (call this a)
