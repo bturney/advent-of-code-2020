@@ -1,9 +1,9 @@
 package day02
 
-import Files
+import com.turney.advent.Files
 
 fun main() {
-    val fileContents = Files.readFileAsList("src/main/resources/day02.csv")
+    val fileContents = Files.readFileAsList("src/main/resources/day02.txt")
     val data = Day02.parseData(fileContents)
 
     val part1Count = data.count { it.validPart1 }

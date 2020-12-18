@@ -1,4 +1,4 @@
-package day03
+package com.turney.advent
 
 fun main() {
     val skiSlope = Files.readFileAsList("src/main/resources/day03.txt")
