@@ -36,14 +36,13 @@ class Day05Test {
     @Nested
     @DisplayName("Part 2")
     inner class Part2 {
-        @Test
-        fun `Matches example`() {
-            assertThat(true).isTrue
-        }
+
+        // No example was given
 
         @Test
         fun `Actual answer`() {
-            assertThat(true).isTrue
+            val answer = Day05(readFileAsList("day05.txt")).solvePart2()
+            assertThat(answer).isEqualTo(599)
         }
     }
 }
