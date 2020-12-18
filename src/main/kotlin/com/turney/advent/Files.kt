@@ -9,6 +9,8 @@ internal object Files {
 
     fun readFileAsListOfInt(fileName: String) = readFileAsList(fileName).map { it.toInt() }
 
+    fun readFileAsText(fileName: String) = File(fileName.toURI()).readText()
+
     private fun String.toURI() =
         Files.javaClass.classLoader.getResource(this)?.toURI()
             ?: throw IllegalArgumentException("Cannot find file: $this")
