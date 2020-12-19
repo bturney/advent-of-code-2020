@@ -43,4 +43,21 @@ class Day06Test {
             assertThat(answer).isEqualTo(6443)
         }
     }
+
+    @Nested
+    @DisplayName("Part 2")
+    inner class Part2 {
+
+        @Test
+        fun `Matches example`() {
+            val answer = Day06(input).solvePart2()
+            assertThat(answer).isEqualTo(6)
+        }
+
+        @Test
+        fun `Actual answer`() {
+            val answer = Day06(readFileAsText("day06.txt")).solvePart2()
+            assertThat(answer).isEqualTo(3232)
+        }
+    }
 }

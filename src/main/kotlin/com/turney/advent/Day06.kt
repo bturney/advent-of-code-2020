@@ -11,6 +11,13 @@ class Day06(input: String) {
 
     fun solvePart1() = answers.sumBy { it.joinToString("").toSet().size }
 
-    fun solvePart2() = 0
+    fun solvePart2() = answers
+        .sumBy { group ->
+            group
+                .joinToString("")
+                .groupingBy { it }
+                .eachCount()
+                .count { it.value == group.size }
+        }
 
 }
